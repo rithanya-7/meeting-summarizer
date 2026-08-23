@@ -1,0 +1,8 @@
+This is an optional sample transcript for testing the summarization prompt.
+
+Manager: We need to finish the first version of the project report by Friday.
+Riya: I can prepare the introduction and methodology sections.
+Arun: I will handle the testing section and collect the screenshots.
+Manager: Good. Let's review the complete report on Friday afternoon.
+Riya: We should also decide whether the demo should use a live recording or a prepared sample.
+Manager: Let's keep a prepared sample for the main demo and show the live upload as an additional step.
