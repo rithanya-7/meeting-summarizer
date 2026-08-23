@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Summarizer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon"></div>
+            <div><strong>Meeting</strong><strong>Summarizer</strong></div>
+        </div>
+
+        <nav class="nav">
+            <button class="nav-item active" data-scroll="dashboard"><span class="nav-icon">⌂</span>Dashboard</button>
+            <button class="nav-item" data-scroll="history-section"><span class="nav-icon">▤</span>Meetings</button>
+            <button class="nav-item" data-scroll="analytics"><span class="nav-icon">⌁</span>Analytics</button>
+            <button class="nav-item" data-scroll="settings"><span class="nav-icon">⚙</span>Settings</button>
+            <button class="nav-item" data-scroll="about"><span class="nav-icon">ⓘ</span>About</button>
+        </nav>
+
+        <div class="tip-card">
+            <div class="tip-title">💡 Tip</div>
+            <p>Upload clear audio for better transcription accuracy.</p>
+            <div class="wave"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+        <header class="topbar">
+            <div>
+                <p class="welcome">Welcome back! 👋</p>
+                <h1>Meeting Summarizer</h1>
+                <p class="subtitle">Upload a meeting recording and get clear notes, decisions, and action items.</p>
+            </div>
+            <div class="hero-art"></div>
+        </header>
+
+        <section class="upload-card">
+            <div class="upload-copy">
+                <h2>Upload Meeting Recording</h2>
+                <p>Supports: mp3, wav, m4a, mp4 (audio)</p>
+            </div>
+
+            <div class="drop-zone" id="dropZone">
+                <div class="upload-icon">⇧</div>
+                <strong>Drag &amp; drop your file here</strong>
+                <span>or</span>
+                <label class="choose-button" for="audioFile">Choose File</label>
+                <input id="audioFile" type="file" accept=".mp3,.wav,.m4a,.mp4,.mpeg,.mpga,.webm,audio/*">
+                <small id="fileName">No file selected</small>
+            </div>
+
+            <div class="summarize-area">
+                <button class="primary-button" id="summarizeButton" type="button"><span>✧</span> Summarize Meeting</button>
+                <p>Our AI will transcribe and<br>summarize your meeting.</p>
+            </div>
+        </section>
+
+        <div class="dashboard-grid">
+            <div class="left-column">
+                <section class="result-card summary-card" id="summary-card">
+                    <div class="card-heading">
+                        <div class="card-icon purple">▤</div>
+                        <div><h2>Summary</h2><p>A brief overview of the meeting.</p></div>
+                    </div>
+                    <div class="content-box" id="summary"><span class="placeholder">Your meeting summary will appear here.</span></div>
+                </section>
+
+                <section class="result-card action-card">
+                    <div class="card-heading">
+                        <div class="card-icon orange">☷</div>
+                        <div><h2>Action Items</h2><p>Tasks to be completed.</p></div>
+                    </div>
+                    <div class="content-box" id="actions"><span class="placeholder">Action items will appear here.</span></div>
+                </section>
+
+                <section class="result-card transcript-card">
+                    <div class="card-heading">
+                        <div class="card-icon purple">▤</div>
+                        <div><h2>Transcript</h2><p>Full meeting transcription.</p></div>
+                    </div>
+                    <div class="transcript-box" id="transcript"><span class="placeholder">Your transcript will appear here after processing.</span></div>
+                </section>
+            </div>
+
+            <div class="middle-column">
+                <section class="result-card decisions-card">
+                    <div class="card-heading">
+                        <div class="card-icon green">✓</div>
+                        <div><h2>Key Decisions</h2><p>Important decisions made.</p></div>
+                    </div>
+                    <div class="content-box" id="decisions"><span class="placeholder">Decisions will appear here.</span></div>
+                </section>
+
+                <section class="result-card questions-card">
+                    <div class="card-heading">
+                        <div class="card-icon blue">?</div>
+                        <div><h2>Open Questions</h2><p>Questions or topics to clarify.</p></div>
+                    </div>
+                    <div class="content-box" id="questions"><span class="placeholder">Open questions will appear here.</span></div>
+                </section>
+            </div>
+
+            <aside class="history-card result-card" id="history-section">
+                <div class="card-heading">
+                    <div class="card-icon blue">◷</div>
+                    <div><h2>Previous Meetings</h2><p>View your past meetings.</p></div>
+                </div>
+                <div id="history" class="history-list"><div class="empty-history">No previous meetings yet.</div></div>
+                <button class="view-all" id="viewAllButton">↗ View All Meetings</button>
+            </aside>
+        </div>
+
+        <section class="hidden-info" id="analytics"></section>
+        <section class="hidden-info" id="settings"></section>
+        <section class="hidden-info" id="about"></section>
+        <p id="status" class="status"></p>
+        <footer>© 2026 Meeting Summarizer. Built for the Unthinkable assignment.</footer>
+    </main>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>
